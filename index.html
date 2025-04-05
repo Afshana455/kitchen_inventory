@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShelf - Kitchen Inventory Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>SmartShelf <i class="fas fa-leaf"></i></h1>
+            <p>Your Intelligent Kitchen Inventory Solution</p>
+        </header>
+
+     
+        <section class="scanner-section">
+            <h2><i class="fas fa-barcode"></i> Scan Product</h2>
+            <div id="qr-scanner"></div>
+            <div class="scanner-controls">
+                <button id="toggle-scanner" class="btn-primary">
+                    <i class="fas fa-camera"></i> Start Scanner
+                </button>
+                <label class="btn-secondary">
+                    <i class="fas fa-upload"></i> Upload Barcode Image
+                    <input type="file" id="barcode-image" accept="image/*" hidden>
+                </label>
+            </div>
+        </section>
+
+       
+        <section class="add-item-section">
+            <h2><i class="fas fa-plus-circle"></i> Add New Item</h2>
+            <div class="input-group">
+                <input type="text" id="itemName" placeholder="Item name">
+                <input type="number" id="itemQty" placeholder="Quantity" min="1">
+                <input type="date" id="expiryDate">
+                <button id="addItemBtn" class="btn-primary">
+                    <i class="fas fa-cart-plus"></i> Add to Inventory
+                </button>
+            </div>
+        </section>
+
+     
+        <section class="alerts-section" id="alertsContainer"></section>
+
+     
+        <section class="inventory-section">
+            <h2><i class="fas fa-box-open"></i> Current Inventory</h2>
+            <div class="inventory-grid" id="inventoryGrid"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
